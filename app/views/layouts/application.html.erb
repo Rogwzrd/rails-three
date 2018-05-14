@@ -7,6 +7,9 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
+    <% if current_user %>
+    <h1>the current user: <%= current_user.name %></h1>
+    <% end %>
     <div class="container">
       <% flash.each do |message_type, message|%>
       <%= content_tag :div, message , class: "alert alert-#{message_type}" %>
